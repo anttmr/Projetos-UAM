@@ -17,3 +17,5 @@ Um sistema simples em Java que simula os pedidos em uma lanchonete, onde o usuá
 - Scanner (entrada de dados via terminal)
 - Locale (para padronizar formatação monetária)
 - Lógica condicional (switch/case)
+
+##💡 Esse projeto foi feito com fins para aprender sobre switch case e do while!
