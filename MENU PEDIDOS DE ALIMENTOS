@@ -1,0 +1,95 @@
+package javaapplication1;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class JavaApplication1 {
+    public static void main(String[] args) {
+   
+    Scanner sc = new Scanner(System.in);
+       
+    int opc,qtde,contPedido;
+    String resp;
+    double totalPedido = 0.0, pedido = 0.0;
+    
+ 
+    Locale.setDefault(Locale.US);
+  
+    resp = "S";
+    contPedido = 0;
+    pedido = 0.0;
+    totalPedido = 0.0;
+    
+do{    
+    //Menu
+    System.out.println("Menu Lanchonete UAM Mooca");    
+    System.out.println(""" 
+                           [1] - Cachorro quente - R$. 4.00
+                           [2] - X-Salada - R$. 4.50
+                           [3] - X-Bacon - R$. 5.00
+                           [4] - Torrada Simples - R$. 2.00
+                           [5] - Refrigerante - R$. 1.50
+                           
+                           Qual opcao vai escolher?
+                           """ );
+       
+        opc = sc.nextInt();
+        
+        
+        System.out.println("Quantidade: ");
+        qtde = sc.nextInt();
+        
+        contPedido++;
+       
+        switch(opc) {
+            case 1:
+                pedido = 4.0 * qtde;
+
+                break;
+                
+            case 2:
+                pedido = 4.5 * qtde;
+        
+                break;
+                
+            case 3:
+                pedido = 5.0 * qtde;
+        
+                break;
+                
+            case 4:
+                pedido = 2.0 * qtde;
+
+                break;
+                
+            case 5:
+                pedido = 1.5 * qtde;
+
+                break;
+        
+                
+            default:
+                System.out.println("Opção invalida");
+            
+            break;
+        }    
+        
+totalPedido += pedido;
+        
+        System.out.printf(" Total do pedido: R$ " + pedido + "\n");
+        
+        System.out.println("Deseja continuar?\n"
+                + "[S]\n"
+                + "[N]");
+        resp = sc.next();
+        
+    }while("S".equals(resp));
+        
+   
+            System.out.println("Ate a proxima!\n");
+            System.out.println("Quantidade de pedidos atendidos: "+ contPedido);
+            System.out.println("Conta: R$ " + totalPedido );
+            
+       }
+    
+}
