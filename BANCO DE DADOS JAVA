@@ -3,11 +3,14 @@ import java.sql.*;
 public class ControllerCrud {
  
     private static String query;
+
+
+
  
     //Criar a conexão com o banco de dados
     public static Connection getConexao() {
         try {
- 
+
             // MySQL utilizando o Workbench
 //            final String URL = "jdbc:mysql://localhost/nome_do_banco"; // Local onde está o banco de dados
 //            final String USER = "root"; // O usuário do banco de dados
@@ -24,7 +27,10 @@ public class ControllerCrud {
             return null;
         }
     }
- 
+
+
+
+
     public static void criarTabela() {
         String sql = "CREATE TABLE IF NOT EXISTS pessoas"
                 + " (id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(255))";
@@ -35,6 +41,9 @@ public class ControllerCrud {
             System.out.println("Erro ao criar a tabela");
         }   
     }
+
+
+
     // Iniciando o CRUD
     // Create
     public static boolean inserirDado(String nome){
@@ -51,6 +60,9 @@ public class ControllerCrud {
             return false;
         }
     }
+
+
+
     // Read
     public static ResultSet buscarDados() {
         query = "SELECT * FROM pessoas";
@@ -62,6 +74,9 @@ public class ControllerCrud {
             return null;
         }          
     }
+
+
+
     // Update
     public static int atualizaDado(int id, String nome) {
         query = "UPDATE pessoas SET nome = ? WHERE id = ?";
@@ -75,6 +90,9 @@ public class ControllerCrud {
             return 0;
         }                
     }
+
+
+
     // Delete
     public static void deletarDado(int id){
         query = "DELETE FROM pessoas WHERE id = ?";
